@@ -1,1 +1,1 @@
-# LIGN167_Project FA222-UCSD
+# LIGN167_Project FA22-UCSD
