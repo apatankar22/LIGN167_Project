@@ -1,0 +1,58 @@
+Given 2 Python functions, one solution function and one inputted function, compare the 2 functions to make sure that the 2 functions will yield the same output. If the inputted function does not yield the same output as the solution function, provide detailed feedback on what needs to be changed in the inputted function. Describe how any differences between the solution and the inputted function would result in different outputs. 
+
+Begin
+
+Solution function:
+def selectionSort(nlist):
+   # iterate through indices of list starting at end of list
+   for fillslot in range(len(nlist)-1,0,-1):
+       maxpos=0
+       for location in range(1,fillslot+1):
+           # find the index of max element
+           if nlist[location]>nlist[maxpos]:
+               maxpos = location
+       # swap the current element with the max element 
+       temp = nlist[fillslot]
+       nlist[fillslot] = nlist[maxpos]
+       nlist[maxpos] = temp
+
+Inputted function:
+def selection_sort(nlist):
+   for fillslot in range(len(nlist)-1,0,-1):
+       maxpos=0
+       for location in range(1,fillslot+1):
+           # find the index of max element
+           if nlist[location]>nlist[maxpos]:
+               maxpos = location
+       temp = nlist[maxpos]
+       nlist[maxpos] = nlist[fillslot]
+       nlist[fillslot] = temp 
+
+Feedback:
+In the inputted function, the lines that swap the current element with the max element are in the wrong order. It should be:
+
+temp = nlist[fillslot]
+nlist[fillslot] = nlist[maxpos]
+nlist[maxpos] = temp
+
+Solution function:
+def reverse_string_words(text):
+    for line in text.split():
+        return(' '.join(line.split()[::-1]))
+
+Inputted function:
+def reverse_words(string):
+        words = string.split()
+        reversed = []
+        for word in words:
+            rev = word[::-1]
+            reversed.append(rev)
+        return ' '.join(reversed)
+
+Feedback:
+The inputted function correctly splits the string into a list of words, but it then reverses each word individually instead of reversing the entire list of words. This can be fixed by reversing the list of words after they have been split, and before they are joined back together into a string. The inputted function should be:
+
+def reverse_words(string):
+        words = string.split()
+        reversed = words[::-1]
+        return ' '.join(reversed)

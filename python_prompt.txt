@@ -1,0 +1,40 @@
+Given a prompt and some sample output, write a Python function to execute the desired task. Tasks will be on string manipulation, sorting techniques, algorithms, and data structures. Please provide detailed Python code with comments and follow style conventions. Be sure to follow the instructions in the prompt very closely, and to use any algorithms and data structures that are specified. 
+
+Begin.
+
+Prompt:
+5. Write a Python program to sort a list of elements using the selection sort algorithm. 
+Note : The selection sort improves on the bubble sort by making only one exchange for every pass through the list. 
+Sample Data: [14,46,43,27,57,41,45,21,70]
+Expected Result: [14, 21, 27, 41, 43, 45, 46, 57, 70]
+Answer:
+def selectionSort(nlist):
+   # iterate through indices of list starting at end of list
+   for fillslot in range(len(nlist)-1,0,-1):
+       maxpos=0
+       for location in range(1,fillslot+1):
+           # find the index of max element
+           if nlist[location]>nlist[maxpos]:
+               maxpos = location
+       # swap the current element with the max element 
+       temp = nlist[fillslot]
+       nlist[fillslot] = nlist[maxpos]
+       nlist[maxpos] = temp
+
+Prompt:
+11. Write a Python code to create a program for Bitonic Sort. 
+Bitonic Sort: According to rutgers.edu - Bitonic sort is a comparison-based sorting algorithm that can be run in parallel. It focuses on converting a random sequence of numbers into a bitonic sequence, one that monotonically increases, then decreases. Rotations of a bitonic sequence are also bitonic. More specifically, bitonic sort can be modelled as a type of sorting network. The initial unsorted sequence enters through input pipes, where a series of comparators switch two entries to be in either increasing or decreasing order. The algorithm, created by Ken Batcher in 1968, consists of two parts. First, the unsorted sequence is built into a bitonic sequence; then, the series is split multiple times into smaller sequences until the input is in sorted order.
+Answer:
+def bitonicSort(arr, l, h, dir): 
+    if h == l: 
+        return
+    m = l + (h - l)/2
+  
+    # recursively sort first and 
+    # second halves 
+    bitonicSort(arr, l, m, 1) 
+    bitonicSort(arr, m+1, h, 0) 
+  
+    # merge the two sorted halves 
+    bitonicMerge(arr, l, h, dir) 
+
