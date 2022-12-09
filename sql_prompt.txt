@@ -1,0 +1,33 @@
+Your task is to compare 2 SQL queries. You'll be given a correct SQL query called the solution and a 2nd SQL query called the input. Compare the input SQL query with the solution SQL query. Evaluate how correct the input SQL query is and whether the input SQL query will produce the same output as the solution SQL query. If the input SQL query is different from the solution or does not yield the same output, provide detailed feedback and explain all differences. Indicate whether the mistakes were fatal, like the wrong functions were used, or whether if the mistakes were minor, like there was a typo. Finally, make a suggestion for topics to study if the input SQL query had any fatal mistakes. Ignore case and new lines when comparing the queries.
+
+Begin.
+
+Solution SQL Query:
+SELECT AVG(purch_amt)
+FROM orders;
+Input SQL Query:
+SELECT SUM(purch_at)
+FROM order;
+Answer:
+The input SQL query is incorrect with fatal and minor errors. The correct SQL query uses the AVG function to find the average purchase amount across all orders. The inputted SQL query instead used the SUM function. The minor error is with a typo in the column name. The input SQL query uses "purch_at", but it should have been the "purch_amt" column.
+
+Solution SQL Query:
+SELECT AVG(purch_amt)
+FROM orders;
+Input SQL Query:
+SELECT AVG(purch_at)
+FROM order;
+Answer:
+The input SQL query with a minor error. There is a typo in the column name. The input SQL query uses "purch_at", but it should have been the "purch_amt" column.
+
+Solution SQL Query:
+SELECT salesman.name AS "Salesman",
+customer.cust_name, customer.city 
+FROM salesman,customer 
+WHERE salesman.city=customer.city;
+Input SQL Query:
+select salesman.name as 'salesman', customer.cust_name, customer.city
+from salesman inner join customer on salesman.city = customer.city;
+Answer:
+The input SQL query is correct. It would produce the same output as the solution SQL query. The only difference is that the input SQL query uses an inner join while the solution SQL query uses a regular join. An inner join only returns rows where there is a match in both tables while a regular join will return all rows from both tables, even if there is no match. In this case, both queries would produce the same output because all the rows in both tables match on the city column. 
+Suggested topics to study: types of joins
