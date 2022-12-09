@@ -24,8 +24,8 @@ class SQLSession:
                         }
     w3_sql_topics = list(w3_sql_topic_urls.keys())
     
-
-    openai.api_key = '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'
+    # PLEASE ENTER IN YOUR OWN OPEN AI API KEY
+    openai.api_key = 'your-key-here'
     with open('sql_prompt.txt') as f:
         PROMPT = f.read()
     STDOUT = sys.stdout
