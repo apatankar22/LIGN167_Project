@@ -30,7 +30,8 @@ class PythonCodingSession:
     
     all_questions = [all_str_exercises_clean, all_ds_algo_exercises_clean]
     
-    openai.api_key = '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'
+    # PLEASE ENTER IN YOUR OWN OPEN AI API KEY
+    openai.api_key = 'your-key-here'
     
     with open('python_prompt.txt') as f:
         python_prompt = f.read()
