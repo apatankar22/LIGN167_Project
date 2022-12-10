@@ -12,7 +12,7 @@ To run a session of the SQL Practice Tool, open a Terminal or a Jupyter Notebook
 from sql_session import *
 SQLSession('your-username-here')
 ```
-You should shee some printed output and will be prompted to enter in some input. 
+You should see some printed output and will be prompted to enter in some input. 
   
 ## Python Practice Tool
 Files needed:
@@ -28,4 +28,17 @@ To run a session of the Python Practice Tool, open a Terminal or a Jupyter Noteb
 from ds_algo_gpt3.py import *
 PythonCodingSession('your-username-here')
 ```
-You should shee some printed output and will be prompted to enter in some input. 
+You should hee see printed output and will be prompted to enter in some input. 
+
+## Behavorial Interview Practice Tool
+Files needed:
+- [`chatbot_to_submit.py`](https://github.com/apatankar22/LIGN167_Project/blob/main/ds_algo_gpt3.py)
+  - Please enter in your OpenAI API key near the top of the file
+- [`your_resume.pdf`]
+
+To run a session of the Python Practice Tool, open a Terminal or a Jupyter Notebook in the same directory as the above files and run the below code:
+```
+from chatbot_to_submit.py import *
+behavorial_questions()
+```
+You should see some printed output and will be prompted to enter in some input. 
