@@ -1,4 +1,5 @@
 # LIGN167 Project FA22: Data Science Interview Tool
+- This tool can be used by students and early career professionals as a comprehensive resource to revise their technical and non-technical interviewing skills.
 
 ## SQL Practice Tool
 Files needed:
